@@ -5,11 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Skills - Jordan M. Grewe</title>
+    <script>
+        function toggleSkillDetails(event) {
+            const details = event.currentTarget.nextElementSibling;
+            if (details.style.display === 'none' || details.style.display === '') {
+                details.style.display = 'block';
+            } else {
+                details.style.display = 'none';
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1>Skills - Jordan M. Grewe</h1>
+        <nav>Header/Nav Bar</nav>
     </header>
+    <div class="floating-icons left">
+        <img src="icons8-c-48 (1).png" alt="C" class="icon1">
+        <img src="icons8-c-48.png" alt="C++" class="icon2">
+        <img src="icons8-java-48.png" alt="Java" class="icon3">
+        <img src="icons8-python-48.png" alt="Python" class="icon4">
+        <img src="icons8-sql-64.png" alt="SQL" class="icon5">
+        <img src="icons8-visual-basic-50.png" alt="Visual Basic" class="icon6">
+        <img src="icons8-c-48 (2).png" alt="C#" class="icon7">
+        <img src="icons8-html-50.png" alt="HTML" class="icon8">
+        <img src="icons8-css-48.png" alt="CSS" class="icon9">
+    </div>
+    <div class="floating-icons right">
+        <img src="icons8-javascript-48.png" alt="JavaScript" class="icon1">
+        <img src="icons8-solidworks-48.png" alt="SolidWorks" class="icon2">
+        <img src="icons8-virtualbox-48.png" alt="VirtualBox" class="icon3">
+        <img src="icons8-django-50.png" alt="Django" class="icon4">
+        <img src="icons8-heroku-48.png" alt="Heroku" class="icon5">
+        <img src="icons8-visual-studio-code-2019-48.png" alt="VS Code" class="icon6">
+        <img src="icons8-redis-16.png" alt="Celery with Redis" class="icon7">
+        <img src="icons8-ssh-48.png" alt="SSH/Remote Desktop" class="icon8">
+        <img src="icons8-solidworks-48.png" alt="Raspberry PI Programming" class="icon9">
+        <img src="icons8-git-48 (1).png" alt="GitHub Version Control" class="icon10">
+        <img src="icons8-git-48.png" alt="Git Version Control">
+    </div>
+
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -21,66 +56,219 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-	<br>
-	    <div class="skills-container">
+    <div class="skills-container">
         <div class="skill-category">
-            <h3>Backend Projects</h3>
-             <ul>
-		<li><strong>C:</strong> Utilized for low-level system programming and creating efficient algorithms.</li><br>
-		<li><strong>C++ (Most Proficient):</strong> Developed various data structures and used in most of my classes so far.</li><br>
-		<li><strong>Java:</strong> Used my object-oriented fundamental concepts in c++ to learn the syntax  of JAVA.</li><br>
-		<li><strong>Python:</strong> Employed in various automation scripts, web scraping, and data analysis projects.</li><br>
-		<li><strong>SQL:</strong> Proficient in structuring queries for data manipulation and management within relational databases.</li>
-	     </ul>
-        </div>
-        
-        <div class="skill-category">
-        <h3>Frontend Projects</h3>
-        <ul>
-		<li><strong>JavaScript:</strong> Applied in creating dynamic and interactive elements on web pages.</li><br>
-		<li><strong>HTML:</strong> Utilized as the standard markup language for creating web pages and web applications.</li><br>
-		<li><strong>CSS:</strong> Employed to style and layout web pages, including adapting displays for different devices and screen sizes.</li>
-	</ul>
+            <h3>Programming Languages</h3>
+            <div class="skill">
+                <span class="skill-name">C</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level wayne-state" style="width: 70%;">70%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">C++</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level wayne-state" style="width: 95%;">95%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Java</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level wayne-state" style="width: 65%;">65%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Python</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level multi" style="width: 95%;">95%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University & Airborne Systems</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">SQL</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level wayne-state" style="width: 40%;">40%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Visual Basic</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level airborne-systems" style="width: 40%;">40%</div>
+                </div>
+                <div class="skill-details">Developed at Airborne Systems</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">C#</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level airborne-systems" style="width: 60%;">60%</div>
+                </div>
+                <div class="skill-details">Developed at Airborne Systems</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">HTML</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level multi" style="width: 80%;">80%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University & Live Stats Project</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">CSS</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level multi" style="width: 85%;">85%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University & Live Stats Project</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">JavaScript</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level multi" style="width: 60%;">60%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University & Live Stats Project</div>
+            </div>
         </div>
 
         <div class="skill-category">
-        <h3>Data Analysis/CAD</h3>
-        <ul>
-		<li><strong>Solidworks:</strong> Used for 3D modeling and design in various engineering projects. (speaker backpack and projectsat the village workshop)</li><br>
-		<li><strong>Fusion 360:</strong> Applied for CAD/CAM/CAE projects requiring integrated conceptual design and engineering workflows.</li><br>
-		<li><strong>MATLAB:</strong> Applied in numerical computing, developing algorithms, and robotic controls.</li><br>
-		<li><strong>MatPlotLib Library (Python):</strong> Utilized for creating static, animated, and interactive visualizations in Python.</li>
-	</ul>
+            <h3>Data Analysis & CAD & APIs</h3>
+            <div class="skill">
+                <span class="skill-name">SolidWorks</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level speakerbackpack" style="width: 30%;">30%</div>
+                </div>
+                <div class="skill-details">Developed at SpeakerBackpack Project</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Fusion 360</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level live-stats" style="width: 50%;">50%</div>
+                </div>
+                <div class="skill-details">Developed during Live Stats Display Project</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">MATLAB</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level wayne-state" style="width: 55%;">55%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Matplotlib (Python)</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level wayne-state" style="width: 80%;">80%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Plotly (Python)</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level airborne-systems" style="width: 80%;">80%</div>
+                </div>
+                <div class="skill-details">Developed at Airborne Systems</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">SportsRadar API</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level live-stats" style="width: 80%;">80%</div>
+                </div>
+                <div class="skill-details">Developed during Live Stats Display Project</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">SOLIDWORKS PDM API</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level airborne-systems" style="width: 75%;">75%</div>
+                </div>
+                <div class="skill-details">Developed at Airborne Systems</div>
+            </div>
         </div>
 
-	<br>
-	    <div class="skill-category">
-        <h3>Development Environments & Tools</h3>
-        <ul>
-		<li><strong>Visual Studio:</strong> Utilized for developing various programs, primarily using C++ and C.</li><br>
-		<li><strong>IntelliJ IDEA:</strong> Used for Java development, taking advantage of its intelligent code completion and robust debugging tools.</li><br>
-		<li><strong>Oracle VM VirtualBox:</strong> Leveraged to run Linux environments for testing and developing applications in a Linux setting, as well as for practicing shell scripting.</li><br>
-                <li><strong>Django:</strong> Utilized as a high-level Python web framework that encourages rapid development and clean, pragmatic design.</li><br>
-                <li><strong>Heroku:</strong> Experienced in deploying applications to a cloud platform, allowing for scalable and distributed execution.</li><br>
-                <li><strong>Visual Studio Code:</strong> Leveraged for integrated development environment (IDE) features, debugging, and version control with Git.</li><br>
-                <li><strong>Celery with Redis:</strong> Implemented as an asynchronous task queue/job queue based on distributed message passing, crucial for time-consuming tasks.</li><br>
-                <li><strong>Tesseract-OCR:</strong> Applied for optical character recognition, extracting text from images for data processing.</li><br>
-                <li><strong>SSH (Secure Shell):</strong> Used for secure remote login from one computer to another to execute commands and transfer files.</li><br>
-                <li><strong>Arduino Programming:</strong> Programmed microcontroller-based hardware for various interactive projects.</li>
-        </ul>
-	<br><br><br><br><br><br><br><br>
-        </div>
-	<br>	    
-	<div class="skill-category">
-        <h3>Project Management & Agile Methodologies</h3>
-        <ul>
-                <li><strong>SCRUM:</strong> Practiced SCRUM techniques for efficient team collaboration and project management in a dynamic development environment.</li><br>
-                <li><strong>Product Ownership:</strong> Demonstrated leadership in guiding project vision, prioritization, and delivery of high-quality software products.</li><br>
-                <li><strong>GitHub Version Control:</strong> Proficient in using GitHub for source code management in the Git version control system to track changes, facilitate collaboration, and maintain project documentation.</li>
-        </ul>
+        <div class="skill-category">
+            <h3>Miscellaneous Web/Programming</h3>
+            <div class="skill">
+                <span class="skill-name">VirtualBox</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level wayne-state" style="width: 60%;">60%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Django</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level live-stats" style="width: 70%;">70%</div>
+                </div>
+                <div class="skill-details">Developed during Live Stats Display Project</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Heroku</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level live-stats" style="width: 65%;">65%</div>
+                </div>
+                <div class="skill-details">Developed during Live Stats Display Project</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Celery with Redis</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level live-stats" style="width: 20%;">20%</div>
+                </div>
+                <div class="skill-details">Developed during Live Stats Display Project</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Tesseract-OCR</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level live-stats" style="width: 65%;">65%</div>
+                </div>
+                <div class="skill-details">Developed during Live Stats Display Project</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">SSH/Remote Desktop</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level live-stats" style="width: 100%;">100%</div>
+                </div>
+                <div class="skill-details">Developed during Live Stats Display Project</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Arduino Programming</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level live-stats" style="width: 65%;">65%</div>
+                </div>
+                <div class="skill-details">Developed during Live Stats Display Project</div>
+            </div>
         </div>
 
-	<br><br><br><br><br><br><br><br>
+        <div class="skill-category">
+            <h3>Project Management & Agile Methodologies</h3>
+            <div class="skill">
+                <span class="skill-name">SCRUM</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level wayne-state" style="width: 80%;">80%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Product Ownership</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level live-stats" style="width: 60%;">60%</div>
+                </div>
+                <div class="skill-details">Developed during Live Stats Display Project</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">GitHub Version Control</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level wayne-state" style="width: 100%;">100%</div>
+                </div>
+                <div class="skill-details">Developed at Wayne State University</div>
+            </div>
+            <div class="skill">
+                <span class="skill-name">Git Version Control</span>
+                <div class="skill-bar" onclick="toggleSkillDetails(event)">
+                    <div class="skill-level airborne-systems" style="width: 100%;">100%</div>
+                </div>
+                <div class="skill-details">Developed at Airborne Systems</div>
+            </div>
+        </div>
+    </div>
     <footer>
         <p>Connect with me on LinkedIn: 
             <a href="https://www.linkedin.com/in/jordan-grewe-856622252/" target="_blank" rel="noopener noreferrer">Jordan Grewe</a>
@@ -88,6 +276,8 @@
         <p>Email me at: 
             <a href="mailto:gp0569@wayne.edu" target="_blank" rel="noopener noreferrer">gp0569@wayne.edu</a>
         </p>
+        <p>Icons: 
+            <a href="https://icons8.com/icons/set/python" target="_blank" rel="noopener noreferrer">Link to Icons</a>
     </footer>
 </body>
 </html>
