@@ -9,13 +9,12 @@ h3 {
     color: #000000;
 }
 
-
 header {
     background-image: url('headerphoto.png');
     background-size: cover; 
     background-position: center;
     color: #8B0000; 
-	text-shadow: 2px 2px 4px #000000;
+    text-shadow: 2px 2px 4px #000000;
     text-align: center;
     padding: 50px 0;
     z-index: 1;
@@ -67,6 +66,7 @@ section {
     margin-right: auto;
     margin-left: auto;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -121,7 +121,6 @@ th {
     td:nth-of-type(2):before { content: "Description"; }
     td:nth-of-type(3):before { content: "Term"; }
 }
-
 
 footer {
     background-color: #000000;
@@ -203,69 +202,7 @@ a:hover {
 .skills-container {
     display: flex;
     justify-content: center;
-}
-
-.skill-category {
-    flex-basis: 30%;
-    margin-right: 15px; 
-    padding: 15px;
-    background-color: #FFF;
-    max-width: 1024px;
-    margin-right: auto;
-    margin-left: auto;
-}
-.skill-category h3 {
-    text-align: center;
-}
-.centered-section .skill-category {
-    flex-basis: auto; 
-    max-width: 100%; 
-}
-
-button {
-    background-color: #007bff; /* Bootstrap primary color */
-    color: white;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-button:hover {
-    background-color: #0056b3; /* Darker shade for hover effect */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; /* Adjust as needed */
-}
-.skill-category {
-    animation: fadeIn 1s ease-out;
-}
-
-@media (max-width: 768px) {
-    .skills-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .skill-category {
-        flex-basis: auto;
-        margin-right: 0;
-        margin-bottom: 20px; /* Add space between items */
-    }
-}
-.skills-container {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
     padding: 20px;
 }
@@ -308,75 +245,23 @@ button:hover {
 .speakerbackpack { background-color: #FF9800; }
 .multi { background-color: #e60303; }
 
-/* Floating Icons */
+/* Change the position of the floating icons */
 .floating-icons {
-    position: fixed;
-    top: 60px;
-    height: calc(100% - 60px);
-    width: 10%;
-    pointer-events: none;
+    position: absolute; /* Change from fixed to absolute */
+    top: 600px; /* Adjust as necessary to align with your content */
+    bottom: 20px; /* Adjust to be above the footer */
+    width: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    z-index: 0;
+    z-index: 0; /* Ensure they are behind other elements */
 }
-.floating-icons img {
-    width: var(--icon-size);
-    height: var(--icon-size);
-    opacity: 0.8;
-    animation: float linear infinite;
-}
-@keyframes float {
-    0% {
-        transform: translateY(-var(--icon-size));
-    }
-    100% {
-        transform: translateY(calc(100vh + var(--icon-size)));
-    }
-}
+
+/* Adjustments for left and right positioning */
 .left {
-    left: 0;
+    left: 70px; /* Adjust as necessary */
 }
+
 .right {
-    right: 0;
-}
-.icon1 {
-    animation-duration: 22s;
-}
-.icon2 {
-    animation-duration: 24s;
-    animation-delay: 2s;
-}
-.icon3 {
-    animation-duration: 26s;
-    animation-delay: 4s;
-}
-.icon4 {
-    animation-duration: 28s;
-    animation-delay: 6s;
-}
-.icon5 {
-    animation-duration: 30s;
-    animation-delay: 8s;
-}
-.icon6 {
-    animation-duration: 32s;
-    animation-delay: 10s;
-}
-.icon7 {
-    animation-duration: 34s;
-    animation-delay: 12s;
-}
-.icon8 {
-    animation-duration: 36s;
-    animation-delay: 14s;
-}
-.icon9 {
-    animation-duration: 38s;
-    animation-delay: 16s;
-}
-.icon10 {
-    animation-duration: 40s;
-    animation-delay: 18s;
+    right: 70px; /* Adjust as necessary */
 }
