@@ -279,27 +279,13 @@ button:hover {
     margin: 10px;
 }
 
-@media (max-width: 768px) {
-    .skills-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .skill-category {
-        flex-basis: auto;
-        width: 90%;
-    }
-}
-
-.skill {
-    margin-bottom: 20px;
-}
 .skill-bar {
     background-color: #ddd;
     border-radius: 25px;
     position: relative;
     cursor: pointer;
 }
+
 .skill-level {
     height: 25px;
     border-radius: 25px;
@@ -309,22 +295,24 @@ button:hover {
     padding-right: 10px;
     box-sizing: border-box;
 }
+
 .skill-details {
     display: none;
     margin-top: 10px;
     font-style: italic;
 }
+
 .wayne-state { background-color: #4CAF50; }
 .live-stats { background-color: #2196F3; }
 .airborne-systems { background-color: #9E9E9E; }
 .speakerbackpack { background-color: #FF9800; }
 .multi { background-color: #e60303; }
 
-/* Add these new styles */
+/* Floating Icons */
 .floating-icons {
     position: fixed;
-    top: 60px; /* Adjust to the height of the header */
-    height: calc(100% - 60px); /* Adjust to the height of the header */
+    top: 60px;
+    height: calc(100% - 60px);
     width: 10%;
     pointer-events: none;
     display: flex;
@@ -334,17 +322,17 @@ button:hover {
     z-index: 0;
 }
 .floating-icons img {
-    width: 60px; /* 150% of 40px */
-    height: 60px; /* 150% of 40px */
+    width: var(--icon-size);
+    height: var(--icon-size);
     opacity: 0.8;
     animation: float linear infinite;
 }
 @keyframes float {
     0% {
-        transform: translateY(0);
+        transform: translateY(-var(--icon-size));
     }
     100% {
-        transform: translateY(calc(100vh - 60px)); /* Adjusted for header height */
+        transform: translateY(calc(100vh + var(--icon-size)));
     }
 }
 .left {
