@@ -249,7 +249,6 @@ a:hover {
 .floating-icons {
     position: absolute; /* Change from fixed to absolute */
     top: 600px; /* Adjust as necessary to align with your content */
-    bottom: 20px; /* Adjust to be above the footer */
     width: 50px;
     display: flex;
     flex-direction: column;
@@ -264,4 +263,20 @@ a:hover {
 
 .right {
     right: 70px; /* Adjust as necessary */
+}
+
+/* Add padding between each icon */
+.floating-icons > * {
+    margin: 10px 0; /* Adjust the margin as necessary for desired padding */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .left {
+        left: 20px; /* Adjust for smaller screens */
+    }
+
+    .right {
+        right: 20px; /* Adjust for smaller screens */
+    }
 }
