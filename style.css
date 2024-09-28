@@ -276,3 +276,19 @@ a:hover {
         right: 20px;
     }
 }
+details {
+    margin-bottom: 10px;
+}
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+summary:after {
+    content: " ➕";
+}
+details[open] summary:after {
+    content: " ➖";
+}
