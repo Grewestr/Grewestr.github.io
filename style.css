@@ -11,9 +11,9 @@ h3 {
 
 header {
     background-image: url('headerphoto.png');
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
-    color: #8B0000; 
+    color: #8B0000;
     text-shadow: 2px 2px 4px #000000;
     text-align: center;
     padding: 50px 0;
@@ -39,11 +39,11 @@ nav ul {
     padding: 0;
     overflow: hidden;
     background-color: #000000;
-    text-align: center; 
+    text-align: center;
 }
 
 nav ul li {
-    display: inline; 
+    display: inline;
 }
 
 nav ul li a {
@@ -141,18 +141,18 @@ footer {
 }
 
 img {
-    width: 100%; 
-    max-width: 600px; 
+    width: 100%;
+    max-width: 600px;
 }
 
 a {
-    color: #3498db; 
-    text-decoration: none; 
-    font-weight: bold; 
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 a:hover {
-    text-decoration: underline; 
+    text-decoration: underline;
 }
 
 .form-group {
@@ -175,7 +175,7 @@ a:hover {
 }
 
 .form-group textarea {
-    height: 200px; 
+    height: 200px;
 }
 
 .form-group input[type="submit"] {
@@ -245,38 +245,34 @@ a:hover {
 .speakerbackpack { background-color: #FF9800; }
 .multi { background-color: #e60303; }
 
-/* Change the position of the floating icons */
 .floating-icons {
-    position: absolute; /* Change from fixed to absolute */
-    top: 600px; /* Adjust as necessary to align with your content */
+    position: absolute;
+    top: 600px;
     width: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 0; /* Ensure they are behind other elements */
+    z-index: 0;
 }
 
-/* Adjustments for left and right positioning */
 .left {
-    left: 70px; /* Adjust as necessary */
+    left: 70px;
 }
 
 .right {
-    right: 70px; /* Adjust as necessary */
+    right: 70px;
 }
 
-/* Add padding between each icon */
 .floating-icons > * {
-    margin: 10px 0; /* Adjust the margin as necessary for desired padding */
+    margin: 10px 0;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .left {
-        left: 20px; /* Adjust for smaller screens */
+        left: 20px;
     }
 
     .right {
-        right: 20px; /* Adjust for smaller screens */
+        right: 20px;
     }
 }
