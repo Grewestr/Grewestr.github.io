@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education - Jordan M. Grewe</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Optional CSS to style the accordion */
+        details {
+            margin-bottom: 10px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary:after {
+            content: " ➕";
+        }
+        details[open] summary:after {
+            content: " ➖";
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -39,100 +58,97 @@
         </div>
         <h3>Relevant Coursework</h3>
         <h4>Completed Courses:</h4>
-        <table>
-            <tr>
-                <th>Course</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td>Calc 1, 2, 3</td>
-                <td>Calculus Series</td>
-            </tr>
-            <tr>
-                <td>Elementary Linear Algebra</td>
-                <td>Introduction to Linear Algebra</td>
-            </tr>
-            <tr>
-                <td>Physics 1 & 2</td>
-                <td>Introductory Physics</td>
-            </tr>
-            <tr>
-                <td>Intro to C and UNIX</td>
-                <td>Foundations in C Programming and UNIX; Memory allocation, file and directory concepts</td>
-            </tr>
-            <tr>
-                <td>Problem Solving and Programming</td>
-                <td>Problem solving with algorithms, and their realization as computer programs using a structured, general purpose programming language; data types, operators, expressions, assignment, input and output, selection and repetition control structures</td>
-            </tr>
-            <tr>
-                <td>Fundamental Structures in Computer Science</td>
-                <td>Introduction to fundamental control and data structures in computer science such as algorithms and complexity; recursive algorithms; program correctness using the predicate calculus; reasoning about algorithms using mathematical induction; divide and conquer algorithms; recurrence relations; set properties and their computation; and computing with relations.</td>
-            </tr>
-            <tr>
-                <td>Computer Science 1</td>
-                <td>Rigorous introduction to fundamental object-oriented concepts and techniques of computer programming using an object-oriented language. Introduction to data abstraction; design of abstract data types. Introduction to recursion; programming with generic data types; inheritance; polymorphism; and exception handlers.</td>
-            </tr>
-            <tr>
-                <td>Introduction to Programming and Computation: Python</td>
-                <td>Basic control structures (sequence, selection, repetition) and all core data types using objects.</td>
-            </tr>
-            <tr>
-                <td>Computer Science 2</td>
-                <td>Design and implementation of fundamental abstract data types of computer science (such as stacks, queues, trees, lists, hashing, and graphs), using an object-oriented language. Programming requirements include the implementation of abstract data types using arrays and dynamic links; recursion; sorting and searching; hashing; and string processing. Introduction to algorithm analysis.</td>
-            </tr>
-            <tr>
-                <td>System Administration</td>
-                <td>Deployment and maintenance of modern computer systems in an operational environment.</td>
-            </tr>
-            <tr>
-                <td>Web Technology</td>
-                <td>e-mail, FTP, Telnet, Gopher, Archie, Newsgroups, WWW, HTML, CGI and PHP scripting and how to create an active web site. Laboratory exercises required.</td>
-            </tr>
-            <tr>
-                <td>JAVA Programming</td>
-                <td>Object-oriented programming, classes, constructors, flow control statements, data types, methods, inheritance, data hiding, abstraction, exceptions, file I/O, Java GUI, and Java packages.</td>
-            </tr>
-            <tr>
-                <td>Computer Operating Systems</td>
-                <td>Introduction to operating system concepts such as process management, memory management, file systems, and I/O systems.</td>
-            </tr>
-            <tr>
-                <td>Introduction to Theoretical Computer Science</td>
-                <td>Study of formal languages, automata theory, computability, and complexity.</td>
-            </tr>
-            <tr>
-                <td>Computer Architecture and Organization</td>
-                <td>Topics include: digital logic and digital systems; machine-level representation of data and programs; assembly level machine organization and programming; register-level description of computer execution and the functional organization of a computer; role and function of programming languages, libraries and operating systems; performance evaluation; systems programming.</td>
-            </tr>
-            <tr>
-                <td>Introduction to Database Management Systems</td>
-                <td>Database concepts, ER modeling, schemas and constraints, SQL and relational algebra, web-based database applications, triggers and views, physical organization and indexing, query processing, query optimization, NoSQL databases.</td>
-            </tr>
-            <tr>
-                <td>Algorithm Design and Analysis</td>
-                <td>Formal techniques to support design and analysis of algorithms: underlying mathematical theory and practical considerations of efficiency.</td>
-            </tr>
-            <tr>
-                <td>Software Engineering</td>
-                <td>Software life cycle; software requirement analysis; software system design; software implementation and testing; software maintenance; team programming; ethics and programmers.</td>
-            </tr>
-            <tr>
-                <td>Ethics in Computer Science</td>
-                <td>Will learn the responsibilities of the computer professionals and how to make appropriate decisions when faced with legal and ethical issues in computing.</td>
-            </tr>
-            <tr>
-                <td>Senior Capstone Project</td>
-                <td>Culminating project integrating knowledge and skills from the undergraduate program.</td>
-            </tr>
-            <tr>
-                <td>Secure Machine Learning</td>
-                <td>Study of security and privacy issues in machine learning, including adversarial attacks and defenses.</td>
-            </tr>
-            <tr>
-                <td>Computer Vision</td>
-                <td>Introduction to computer vision, including image processing, feature detection, object recognition, and deep learning techniques.</td>
-            </tr>
-        </table>
+        <!-- Accordion-style course list -->
+        <div class="course-list">
+            <details>
+                <summary>Calc 1, 2, 3</summary>
+                <p>Calculus Series</p>
+            </details>
+            <details>
+                <summary>Elementary Linear Algebra</summary>
+                <p>Introduction to Linear Algebra</p>
+            </details>
+            <details>
+                <summary>Physics 1 & 2</summary>
+                <p>Introductory Physics</p>
+            </details>
+            <details>
+                <summary>Intro to C and UNIX</summary>
+                <p>Foundations in C Programming and UNIX; Memory allocation, file and directory concepts</p>
+            </details>
+            <details>
+                <summary>Problem Solving and Programming</summary>
+                <p>Problem solving with algorithms, and their realization as computer programs using a structured, general-purpose programming language; data types, operators, expressions, assignment, input and output, selection and repetition control structures</p>
+            </details>
+            <details>
+                <summary>Fundamental Structures in Computer Science</summary>
+                <p>Introduction to fundamental control and data structures in computer science such as algorithms and complexity; recursive algorithms; program correctness using the predicate calculus; reasoning about algorithms using mathematical induction; divide and conquer algorithms; recurrence relations; set properties and their computation; and computing with relations.</p>
+            </details>
+            <details>
+                <summary>Computer Science 1</summary>
+                <p>Rigorous introduction to fundamental object-oriented concepts and techniques of computer programming using an object-oriented language. Introduction to data abstraction; design of abstract data types. Introduction to recursion; programming with generic data types; inheritance; polymorphism; and exception handlers.</p>
+            </details>
+            <details>
+                <summary>Introduction to Programming and Computation: Python</summary>
+                <p>Basic control structures (sequence, selection, repetition) and all core data types using objects.</p>
+            </details>
+            <details>
+                <summary>Computer Science 2</summary>
+                <p>Design and implementation of fundamental abstract data types of computer science (such as stacks, queues, trees, lists, hashing, and graphs), using an object-oriented language. Programming requirements include the implementation of abstract data types using arrays and dynamic links; recursion; sorting and searching; hashing; and string processing. Introduction to algorithm analysis.</p>
+            </details>
+            <details>
+                <summary>System Administration</summary>
+                <p>Deployment and maintenance of modern computer systems in an operational environment.</p>
+            </details>
+            <details>
+                <summary>Web Technology</summary>
+                <p>E-mail, FTP, Telnet, Gopher, Archie, Newsgroups, WWW, HTML, CGI and PHP scripting, and how to create an active web site. Laboratory exercises required.</p>
+            </details>
+            <details>
+                <summary>JAVA Programming</summary>
+                <p>Object-oriented programming, classes, constructors, flow control statements, data types, methods, inheritance, data hiding, abstraction, exceptions, file I/O, Java GUI, and Java packages.</p>
+            </details>
+            <details>
+                <summary>Computer Operating Systems</summary>
+                <p>Introduction to operating system concepts such as process management, memory management, file systems, and I/O systems.</p>
+            </details>
+            <details>
+                <summary>Introduction to Theoretical Computer Science</summary>
+                <p>Study of formal languages, automata theory, computability, and complexity.</p>
+            </details>
+            <details>
+                <summary>Computer Architecture and Organization</summary>
+                <p>Topics include digital logic and digital systems; machine-level representation of data and programs; assembly-level machine organization and programming; register-level description of computer execution and the functional organization of a computer; role and function of programming languages, libraries, and operating systems; performance evaluation; systems programming.</p>
+            </details>
+            <details>
+                <summary>Introduction to Database Management Systems</summary>
+                <p>Database concepts, ER modeling, schemas and constraints, SQL and relational algebra, web-based database applications, triggers and views, physical organization and indexing, query processing, query optimization, NoSQL databases.</p>
+            </details>
+            <details>
+                <summary>Algorithm Design and Analysis</summary>
+                <p>Formal techniques to support design and analysis of algorithms: underlying mathematical theory and practical considerations of efficiency.</p>
+            </details>
+            <details>
+                <summary>Software Engineering</summary>
+                <p>Software life cycle; software requirement analysis; software system design; software implementation and testing; software maintenance; team programming; ethics and programmers.</p>
+            </details>
+            <details>
+                <summary>Ethics in Computer Science</summary>
+                <p>Learn the responsibilities of computer professionals and how to make appropriate decisions when faced with legal and ethical issues in computing.</p>
+            </details>
+            <details>
+                <summary>Senior Capstone Project</summary>
+                <p>Culminating project integrating knowledge and skills from the undergraduate program.</p>
+            </details>
+            <details>
+                <summary>Secure Machine Learning</summary>
+                <p>Study of security and privacy issues in machine learning, including adversarial attacks and defenses.</p>
+            </details>
+            <details>
+                <summary>Computer Vision</summary>
+                <p>Introduction to computer vision, including image processing, feature detection, object recognition, and deep learning techniques.</p>
+            </details>
+        </div>
     </section>
     <footer>
         <p>Connect with me on LinkedIn: 
