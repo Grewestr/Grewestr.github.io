@@ -24,16 +24,13 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-
-    <!-- Wrap body text in a container -->
-    <div class="container" style="max-width: 900px; margin: 0 auto;">
+    <div class=".container">
         <section id="home">
             <h2><Strong>Welcome to My Portfolio</Strong></h2>
-            <p>Hello! I'm Jordan, a Computer Science Senior and searching for full time employment starting January 2025. Explore my portfolio to learn more about my education, skills, experiences, and affiliations.</p>
-            <p>I invite you to learn about some of my personal projects. If you have further questions, please navigate to the Contact section to talk with me further in my embedded chat widget!</p>
+            <p>Hello! I'm Jordan, a recent BSCS graduate and searching for full time employment starting January 2025. I am currently working towards my MSCS (Computational Perception and Robotics Specialization). Explore my portfolio to learn more about my education, skills, experiences, and affiliations.</p>
         </section>
     </div>
-    <div class="container" style="max-width: 900px; margin: 0 auto;">
+    <div class=".container">
         <section id="projects" class="my-5">
             <!-- Featured Projects title with buttons next to it -->
             <div class="d-flex justify-content-center align-items-center">
@@ -43,43 +40,60 @@
             </div>
 
             <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-md-12">
-                                <h3>Live NBA Display - CSC 4110 Software Engineering</h3>
-                                <p class="text-start">Under my leadership as the Team Leader and Product Owner, a team of 6 students developed the Live Sports Display project with a focus on delivering a real-time sports visualization experience. This project, built on a Django framework and developed in Visual Studio Code, is hosted on Heroku, a cloud-based application service. Utilizing tesseract-OCR for intelligent image analysis, our web application processes user-uploaded screenshots of fantasy basketball teams. This data is then conveyed through SSH to a Raspberry Pi, driving the 3 ws2812b LED panels. To manage this process efficiently, we employed Celery with Redis to handle asynchronous task execution, ensuring a responsive and scalable system. While the project's core functionality is operational, we continue to work and aim to have this finished by May 2024. We will enhance the user interface and construct a 3D printed case for the hardware components. Please contact me for a longer video or explanation as GitHub only supports files less than 25 MB.</p>
-                                <p><a href="https://github.com/WSU-4110/Live-Sports-Display/tree/development" target="_blank">View on GitHub</a> | <a href="https://livesportsdisplay-78ab65502a20.herokuapp.com/" target="_blank">Visit the Live Sports Display Website</a></p>
-                                <img src="portfolio gif.gif" class="d-block w-100 mx-auto" alt="Live NBA Display project image">
-                            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <h3>Live NBA Display - CSC 4110 Software Engineering</h3>
+                            <p class="text-start">Under my leadership as the Team Leader and Product Owner, a team of 6 students developed the Live Sports Display project with a focus on delivering a real-time sports visualization experience. This project, built on a Django framework and developed in Visual Studio Code, is hosted on Heroku, a cloud-based application service. Utilizing tesseract-OCR for intelligent image analysis, our web application processes user-uploaded screenshots of fantasy basketball teams. This data is then conveyed through SSH to a Raspberry Pi, driving the 3 ws2812b LED panels. To manage this process efficiently, we employed Celery with Redis to handle asynchronous task execution, ensuring a responsive and scalable system. While the project's core functionality is operational, we continue to work and aim to have this finished by May 2024. We will enhance the user interface and construct a 3D printed case for the hardware components. Please contact me for a longer video or explanation as GitHub only supports files less than 25 MB.</p>
+                            <p><a href="https://github.com/WSU-4110/Live-Sports-Display/tree/development" target="_blank">View on GitHub</a> | <a href="https://livesportsdisplay-78ab65502a20.herokuapp.com/" target="_blank">Visit the Live Sports Display Website</a></p>
+                            <img src="portfolio gif.gif" class="d-block w-100 mx-auto" alt="Live NBA Display project image">
                         </div>
                     </div>
+                </div>
 
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-12">
-                                <h3>"Footprint", Find Missing People (In Progress) - CSC 4996 Senior Capstone Project</h3>
-                                <p class="text-start">Footprint is our senior capstone project developed by a team of four, designed to rapidly locate missing individuals by analyzing live video feeds and recognizing people based on clothing and appearance without requiring specialized equipment. To overcome challenges like frequent outfit changes and environmental factors, it combines features such as color, texture, time, and location using advanced image processing techniques and a comprehensive dataset. The tech stack includes Python for backend development, PyTorch for machine learning, Roboflow for dataset management, OpenCV for image processing, YOLOv5 for object detection, Django as the web framework, and HTML, CSS, and JavaScript for the frontend. An example of the dashboard is provided, and this page will be updated on November 23rd with the latest features.</p>
-                                <img src="footprint.png" class="d-block w-100 mx-auto" alt="Dashboard example">
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <h3>"Footprint", Find Missing People - CSC 4996 Senior Capstone Project</h3>
+                            <p class="text-start">
+                                Developed a web-based application to assist law enforcement in locating missing individuals using live video analysis and machine learning-based clothing detection. Features include a user-friendly interface, advanced image recognition, and attribute-based search.
+                            </p>
+                            <p class="text-start">
+                                <strong>Tech Stack:</strong> YOLOv11m, Python, Firebase Authentication, Firestore, Django, Roboflow
+                            </p>
+                            <p>
+                                <a href="https://github.com/Grewestr/CSC-4996-Footprint-Public" target="_blank">View on GitHub</a> | <a href="https://www.linkedin.com/posts/your-post-link" target="_blank">View LinkedIn Post</a>
+                            </p>
+                            <div class = "image-container2">
+                                <img src="footprint.png" class="d-block w-100 mx-auto" alt="Footprint project dashboard example">
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+                            <h3>"CrowdCTRL", Room Occupancy Detection - CSC 5991 001 Computer Vision</h3>
+                            <p class="text-start">
+                                CrowdCTRL uses a Raspberry Pi 4 and a lightweight YOLOv5n model to estimate occupancy by capturing frames every 15 seconds. The data is uploaded to Firestore and visualized in a Node.js-based mobile app, enabling real-time crowd monitoring.
+                            </p>
+                            <p class="text-start">
+                                <strong>Tech Stack:</strong> Node.js, Firebase, YOLOv5n, React-Native-Maps, Raspberry Pi, Python
+                            </p>
+                            <p>
+                                <a href="https://github.com/Grewestr/CrowdCTRL" target="_blank">View on GitHub</a> | <a href="https://www.linkedin.com/feed/update/urn:li:activity:7272237373042626560/" target="_blank">View LinkedIn Post</a>
+                            </p>
+                            <div class="image-container">
+                                <img src="crowd1.jpg" alt="CrowdCTRL Image 1">
+                                <img src="crowd2.jpg" alt="CrowdCTRL Image 2">
+                                <img src="crowd3.jpg" alt="CrowdCTRL Image 3">
+                                <img src="crowd4.jpg" alt="CrowdCTRL Image 4">
                             </div>
                         </div>
                     </div>
-	
-			<div class="carousel-item">
-				<div class="row justify-content-center">
-					<div class="col-md-12">
-						<h3>"Get Out", Room Occupancy Detection (In Progress) - CSC 5991 001 Computer Vision</h3>
-						<p class="text-start">
-							This project is currently in development and is expected to be completed by late November. It utilizes a Raspberry Pi with a camera, YOLO (You Only Look Once) for real-time object detection, and TensorFlow Lite to monitor the number of people in a room. The system processes video frames continuously, detecting and counting people. A REST API, built using Flask, sends this data to a mobile app, which updates the room's crowd metrics in real-time. The mobile app, developed in React Native, displays the room's occupancy and provides notifications if the room becomes too crowded. 
-						</p>
-						<p class="text-start">
-							Check back late November for photos and updates of this project.
-						</p>
-						<!--img src="placeholder_image.jpg" class="d-block w-100 mx-auto" alt="No project image available yet"-->
-					</div>
-				</div>
-			</div>
-	
+                </div>
 			<div class="carousel-item">
 				<div class="row justify-content-center">
 					<div class="col-md-12">
@@ -87,78 +101,86 @@
 						<p class="text-start">
 							This project integrates Zillow's API and Twilio's WhatsApp messaging service to automate the search for rental properties. It retrieves apartment listings in a specified location based on user-defined criteria such as price range, number of bedrooms, and bathrooms. The tool filters results based on key features like parking and laundry, and automatically sends the details to the user's WhatsApp. The project simplifies the apartment search process by providing real-time updates on available properties directly to the user’s phone.
 						</p>
-						<img src="ApartmentSearch.jpg" class="d-block w-100 mx-auto" alt="Automated Apartment Search Tool">
+                        <div class="image-container3">
+						    <img src="ApartmentSearch.jpg" class="d-block w-100 mx-auto" alt="Automated Apartment Search Tool">
+                        </div>
 					</div>
 				</div>
 			</div>
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-12">
-                                <h3>Speaker Backpack - Personal</h3>
-                                <p class="text-start">Initiated at the age of 16, the Speaker Backpack was my first engineering project, where I repurposed speakers from my brother's Dodge Neon and integrated an 8" sub, powered by a 12V DC battery. The design incorporated an echo chamber to optimize sound output, applying basic audio engineering principles. While the 70lb backpack was not the most practical in terms of portability, it was a hit at football practices and basketball games, teaching me about audio engineering, amp wiring, circuitry, and fabrication using heavy machinery like the shop bot.</p>
-                                <img src="SpBackpack.png" class="d-block w-100 mx-auto" alt="Speaker Backpack image">
-                                <p><a href="https://www.hometownlife.com/story/news/2017/05/12/nhs-student-exhibition-working-headline/313623001/" target="_blank">View News Article</a></p>
-                            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h3>Speaker Backpack - Personal</h3>
+                        <p class="text-start">Initiated at the age of 16, the Speaker Backpack was my first engineering project, where I repurposed speakers from my brother's Dodge Neon and integrated an 8" sub, powered by a 12V DC battery. The design incorporated an echo chamber to optimize sound output, applying basic audio engineering principles. While the 70lb backpack was not the most practical in terms of portability, it was a hit at football practices and basketball games, teaching me about audio engineering, amp wiring, circuitry, and fabrication using heavy machinery like the shop bot.</p>
+                        <p><a href="https://www.hometownlife.com/story/news/2017/05/12/nhs-student-exhibition-working-headline/313623001/" target="_blank">View News Article</a></p>
+                        <div class="image-container3">
+                        <img src="SpBackpack.png" class="d-block w-100 mx-auto" alt="Speaker Backpack image">
                         </div>
                     </div>
-
-                    <!-- Project 3: Cylindrical LED Display with Sound Sensor -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-12">
-                                <h3>Cylindrical LED Display with Sound Sensor - Personal</h3>
-                                <p class="text-start">Designed as a "totem" for music festivals, this project utilized ~1200 individually addressed RGB pixels attached to an 8-foot carbon fiber pole to create distinguishable pattern algorithms visible from a distance. Integrated with a sound sensor and Arduino, the display responded to bass frequencies, altering patterns during music "drops". My brother graciously assisted with the coding aspect, while I took the lead in the hardware development and overall design of the project. While it garnered interest for purchase, it was not pursued due to cost-effectiveness and market size. This project enhanced my knowledge in matrix manipulation, transformation, and data vectoring, and was a wonderful experience in collaborative work and leadership.</p>
-                                <img src="LED GIF.gif" class="d-block w-100 mx-auto" alt="Cylindrical LED project image">
-                            </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h3>Cylindrical LED Display with Sound Sensor - Personal</h3>
+                        <p class="text-start">Designed as a "totem" for music festivals, this project utilized ~1200 individually addressed RGB pixels attached to an 8-foot carbon fiber pole to create distinguishable pattern algorithms visible from a distance. Integrated with a sound sensor and Arduino, the display responded to bass frequencies, altering patterns during music "drops". My brother graciously assisted with the coding aspect, while I took the lead in the hardware development and overall design of the project. While it garnered interest for purchase, it was not pursued due to cost-effectiveness and market size. This project enhanced my knowledge in matrix manipulation, transformation, and data vectoring, and was a wonderful experience in collaborative work and leadership.</p>
+                        <img src="LED GIF.gif" class="d-block w-100 mx-auto" alt="Cylindrical LED project image">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h3>Replacing the Exhaust Manifold on a 4.6L V6 Boat Engine - Personal</h3>
+                        <p class="text-start">My friend and I embarked on a journey to refurbish a 1995 Regal speed boat, purchased for around 2 thousand dollars. Upon discovering a crack in the exhaust manifold and subsequent rust inside, we disassembled the engine, installed a new part, and retuned the engine. Despite initial stalling issues due to our tuning, professional retuning made it fully operational. This project provided insights into engine mechanics, tuning, and failure analysis.</p>
+                        <div class ="image-container3">
+                            <img src="Boat engine- tuning rods angle.jpg" class="d-block w-100 mx-auto" alt="Boat engine project image">
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-md-12">
-                                <h3>Replacing the Exhaust Manifold on a 4.6L V6 Boat Engine - Personal</h3>
-                                <p class="text-start">My friend and I embarked on a journey to refurbish a 1995 Regal speed boat, purchased for around 2 thousand dollars. Upon discovering a crack in the exhaust manifold and subsequent rust inside, we disassembled the engine, installed a new part, and retuned the engine. Despite initial stalling issues due to our tuning, professional retuning made it fully operational. This project provided insights into engine mechanics, tuning, and failure analysis.</p>
-                                <img src="Boat engine- tuning rods angle.jpg" class="d-block w-100 mx-auto" alt="Boat engine project image">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h3>Research Paper Summary 1: Privacy-Preserving Deep Learning - CSC 5991 002 Secure Machine Learning</h3>
+                        <p class="text-start">
+                            I presented on the topic of privacy-preserving deep learning, specifically focusing on the paper 'Privacy-Preserving
+                        </p> Deep Learning' by Reza Shorki and Vitaly Shmatikov. This research explored how distributed learning techniques enable machine learning models to be trained without exchanging raw data between participants, thereby enhancing privacy within deep learning systems.
+                        <p class="text-start">
+                            This presentation was held on:<br>
+                            - <strong>October 8, 2024 (Tuesday):</strong> Privacy-preserving deep learning
+                        </p>
+                        <p class="text-start">
+                            A full report on this paper is linked below.<br>
+                            <a href="https://www.comp.nus.edu.sg/~reza/files/Shokri-CCS2015.pdf" target="_blank">Read the full paper here</a> | <a href="Privacy-Preserving Deep Learning.pptx" target="_blank" download>Download Presentation</a>
+                            <div class="image-container2">
+                                <img src="1.png" alt="No  image">
                             </div>
-                        </div>
+                        </p>
                     </div>
-			<div class="carousel-item">
-				<div class="row justify-content-center">
-					<div class="col-md-12">
-						<h3>Research Paper Summary 1: Privacy-Preserving Deep Learning - CSC 5991 002 Secure Machine Learning</h3>
-						<p class="text-start">
-							I will be presenting on the topic of privacy-preserving deep learning, specifically focusing on the paper 'Privacy-Preserving Deep Learning' by Shokri et al. This research explores how distributed learning techniques enable machine learning models to be trained without exchanging raw data between participants, thereby enhancing privacy within deep learning systems.
-						</p>
-						<p class="text-start">
-							This presentation will be held on:<br>
-							- <strong>October 8, 2024 (Tuesday):</strong> Privacy-preserving deep learning
-						</p>
-						<p class="text-start">
-							A full report on this paper will be linked below.<br>
-							<a href="https://www.comp.nus.edu.sg/~reza/files/Shokri-CCS2015.pdf" target="_blank">Read the full paper here</a>.
-						</p>
-						<img src="placeholder_research2.jpg" class="d-block w-100 mx-auto" alt="Placeholder image for research paper summary 2">
-					</div>
-				</div>
-			</div>
-			<div class="carousel-item">
-				<div class="row justify-content-center">
-					<div class="col-md-12">
-						<h3>Research Paper Summary 2: Differential Privacy Attacks in Machine Learning - CSC 5991 002 Secure Machine Learning</h3>
-						<p class="text-start">
-							I will be presenting on the topic of membership inference attacks in machine learning, focusing on the research paper "Membership Inference Attacks Against Machine Learning Models" by Shokri et al. The presentation will cover how these attacks exploit differences in model behavior to infer whether specific data points were part of the training dataset.
-						</p>
-						<p class="text-start">
-							The presentation will be held on:<br>
-							- <strong>November 19, 2024 (Tuesday):</strong> Machine learning with membership privacy using adversarial regularization
-						</p>
-						<p class="text-start">
-							A full report on the paper and its findings will be linked below.<br>
-							<a href="https://www.comp.nus.edu.sg/~reza/files/Shokri-CCS2018.pdf" target="_blank">Read the full paper here</a>.
-						</p>
-						<img src="placeholder_research1.jpg" class="d-block w-100 mx-auto" alt="Placeholder image for research paper summary 1">
-					</div>
-				</div>
-			</div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <h3>Research Paper Summary 2: Differential Privacy Attacks in Machine Learning - CSC 5991 002 Secure Machine Learning</h3>
+                        <p class="text-start">
+                            I presented on the topic of membership inference attacks in machine learning, focusing on the research paper "Membership Inference Attacks Against Machine Learning Models" by Milad Nasr, Reza Shokri and Amir Houmansadr. The presentation covered how these attacks exploit differences in model behavior to infer whether specific data points were part of the training dataset.
+                        </p>
+                        <p class="text-start">
+                            The presentation was held on:<br>
+                            - <strong>November 19, 2024 (Tuesday):</strong> Machine learning with membership privacy using adversarial regularization
+                        </p>
+                        <p class="text-start">
+                            A full report on the paper and its findings is linked below.<br>
+                            <a href="https://www.comp.nus.edu.sg/~reza/files/Shokri-CCS2018.pdf" target="_blank">Read the full paper here</a> | <a href="Machine Learning with Membership Privacy.pptx" target="_blank" download>Download Presentation</a>
+                            <div class="image-container2">
+                                <img src="2.png" alt="No  image">
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>            
                 </div>
             </div>
         </section>
@@ -169,7 +191,7 @@
             <a href="https://www.linkedin.com/in/jordangrewe" target="_blank" rel="noopener noreferrer">Jordan Grewe</a>
         </p>
         <p>Email me at: 
-            <a href="mailto:gp0569@wayne.edu" target="_blank" rel="noopener noreferrer">gp0569@wayne.edu</a>
+            <a href="mailto:jgrewe3@gatech.edu" target="_blank" rel="noopener noreferrer">jgrewe3@gatech.edu</a>
         </p>
     </footer>
 </body>

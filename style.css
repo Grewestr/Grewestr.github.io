@@ -301,3 +301,69 @@ summary:after {
 details[open] summary:after {
     content: "-";
 }
+
+.container {
+    max-width: 900px;
+    min-width: 300px; 
+    width: 100%; 
+    margin: 0 auto; 
+    padding: 15px; 
+    box-sizing: border-box; 
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 900px) {
+    .container {
+        max-width: 100%; 
+        min-width: unset; 
+        padding: 10px; 
+    }
+}
+
+.image-container {
+    display: flex;               
+    justify-content: center;     
+    gap: 15px;                   
+    flex-wrap: wrap;             
+    margin-top: 10px;            
+}
+
+.image-container img {
+    width: 20%;                  
+    max-width: 200px;            
+    height: auto;                
+    border: 1px solid #ddd;      
+    border-radius: 5px;          
+}
+
+.image-container2 {
+    display: flex;               
+    justify-content: center;     
+    gap: 15px;                   
+    flex-wrap: wrap;             
+    margin-top: 10px;            
+}
+
+.image-container2 img {
+    width: 80%; 
+    max-width: 800px; 
+    height: auto;                
+    border: 1px solid #ddd;      
+    border-radius: 5px;          
+}
+
+.image-container3 {
+    display: flex;               
+    justify-content: center;     
+    gap: 15px;                   
+    flex-wrap: wrap;             
+    margin-top: 10px;            
+}
+
+.image-container3 img {
+    width: 50%; 
+    max-width: 500px; 
+    height: auto;                
+    border: 1px solid #ddd;      
+    border-radius: 5px;          
+}
