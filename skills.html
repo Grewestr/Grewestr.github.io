@@ -121,7 +121,7 @@
             { name: 'CSS', proficiency: 85, category: 'multi' },
             { name: 'JavaScript', proficiency: 60, category: 'multi' },
             { name: 'Shell Scripting', proficiency: 70, category: 'multi' },
-            { name: 'Linux', proficiency: 60, category: 'multi' },
+            { name: 'Linux Environment', proficiency: 60, category: 'multi' },
             
             // Data Analysis, ML & APIs
             { name: 'Pandas', proficiency: 85, category: 'multi' },
@@ -133,7 +133,7 @@
             { name: 'OpenCV', proficiency: 80, category: 'live-stats' },
             { name: 'RoboFlow', proficiency: 65, category: 'live-stats' },
             { name: 'SportsRadar API', proficiency: 80, category: 'live-stats' },
-            { name: 'SolidWorks PDM', proficiency: 75, category: 'airborne-systems' },
+            { name: 'SolidWorks PDM API', proficiency: 75, category: 'airborne-systems' },
             { name: 'OpenAI API', proficiency: 100, category: 'wayne-state' },
             
             // Application Development
@@ -153,7 +153,7 @@
             { name: 'GitHub', proficiency: 100, category: 'wayne-state' },
             { name: 'GitHub Actions', proficiency: 100, category: 'wayne-state' },
             { name: 'Git', proficiency: 100, category: 'airborne-systems' },
-            { name: 'Git Hooks', proficiency: 80, category: 'airborne-systems' },
+            { name: 'Git Hooks (Update & Post-Receive)', proficiency: 80, category: 'airborne-systems' },
             { name: 'SCRUM', proficiency: 80, category: 'wayne-state' },
             { name: 'Waterfall', proficiency: 70, category: 'airborne-systems' }
         ];
@@ -194,7 +194,7 @@
                     word.className = 'skill-word';
                     word.textContent = skill.name;
                     
-                    // Calculate size based on proficiency (40-100% maps to 16-48px)
+                    // Calculate size based on proficiency (maps proficiency 0-100% to 16-48px)
                     const minSize = 16;
                     const maxSize = 48;
                     const size = minSize + (skill.proficiency / 100) * (maxSize - minSize);
@@ -226,7 +226,9 @@
                     
                     // Calculate scale and opacity based on z-position
                     const perspective = 500;
-                    const scale = perspective / (perspective - z) * this.scale;
+                    // Prevent division by zero or negative scale
+                    const safeZ = Math.min(z, perspective - 1);
+                    const scale = perspective / (perspective - safeZ) * this.scale;
                     const opacity = (z + this.radius) / (2 * this.radius);
                     
                     // Apply transform
