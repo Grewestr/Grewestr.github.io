@@ -7,43 +7,89 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script>
-        function toggleSkillDetails(event) {
-            const details = event.currentTarget.nextElementSibling;
-            if (details.style.display === 'none' || details.style.display === '') {
-                details.style.display = 'block';
-            } else {
-                details.style.display = 'none';
+    <style>
+        #skills-cloud-container {
+            width: 100%;
+            max-width: 1200px;
+            height: 700px;
+            margin: 30px auto;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            perspective: 1000px;
+        }
+        
+        #skills-cloud {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            cursor: grab;
+        }
+        
+        #skills-cloud:active {
+            cursor: grabbing;
+        }
+        
+        .skill-word {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            user-select: none;
+            transition: transform 0.1s ease-out, opacity 0.3s ease;
+            transform-style: preserve-3d;
+            white-space: nowrap;
+        }
+        
+        #skills-instructions {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #2c3e50;
+            z-index: 10;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
             }
         }
-    </script>
+        
+        @media (max-width: 768px) {
+            #skills-cloud-container {
+                height: 500px;
+            }
+            
+            #skills-instructions {
+                font-size: 0.8rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Skills - Jordan Grewe</h1>
     </header>
-    <div class="floating-icons left">
-        <img src="icons8-c-48 (1).png" alt="C">
-        <img src="icons8-c-48.png" alt="C++">
-        <img src="icons8-java-48.png" alt="Java">
-        <img src="icons8-python-48.png" alt="Python">
-        <img src="icons8-sql-64.png" alt="SQL">
-        <img src="icons8-visual-basic-50.png" alt="Visual Basic">
-        <img src="icons8-c-48 (2).png" alt="C#">
-        <img src="icons8-html-50.png" alt="HTML">
-        <img src="icons8-css-48.png" alt="CSS">
-    </div>
-    <div class="floating-icons right">
-        <img src="icons8-javascript-48.png" alt="JavaScript">
-        <img src="icons8-virtualbox-48.png" alt="VirtualBox">
-        <img src="icons8-django-50.png" alt="Django">
-        <img src="icons8-heroku-48.png" alt="Heroku">
-        <img src="icons8-visual-studio-code-2019-48.png" alt="VS Code">
-        <img src="icons8-ssh-48.png" alt="SSH/Remote Desktop">
-        <img src="icons8-solidworks-48.png" alt="SolidWorks">
-        <img src="icons8-git-48 (1).png" alt="GitHub Version Control">
-        <img src="icons8-git-48.png" alt="Git Version Control">
-    </div>
+
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -55,355 +101,229 @@
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <div class="skills-container">
-        <!-- Programming Languages -->
-        <div class="skill-category">
-            <h3>Programming Languages</h3>
-            <!-- C -->
-            <div class="skill">
-                <span class="skill-name">C</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 80%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-            <!-- C++ -->
-            <div class="skill">
-                <span class="skill-name">C++</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 95%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-            <!-- Java -->
-            <div class="skill">
-                <span class="skill-name">Java</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 65%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-            <!-- Python -->
-            <div class="skill">
-                <span class="skill-name">Python</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level multi" style="width: 95%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University & Airborne Systems</div>
-            </div>
-            <!-- SQL -->
-            <div class="skill">
-                <span class="skill-name">SQL</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 40%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-            <!-- Visual Basic -->
-            <div class="skill">
-                <span class="skill-name">Visual Basic</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level airborne-systems" style="width: 40%;"></div>
-                </div>
-                <div class="skill-details">Developed at Airborne Systems</div>
-            </div>
-            <!-- C# -->
-            <div class="skill">
-                <span class="skill-name">C#</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level airborne-systems" style="width: 60%;"></div>
-                </div>
-                <div class="skill-details">Developed at Airborne Systems</div>
-            </div>
-            <!-- HTML -->
-            <div class="skill">
-                <span class="skill-name">HTML</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level multi" style="width: 80%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University & Live Stats Project</div>
-            </div>
-            <!-- CSS -->
-            <div class="skill">
-                <span class="skill-name">CSS</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level multi" style="width: 85%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University & Live Stats Project</div>
-            </div>
-            <!-- JavaScript -->
-            <div class="skill">
-                <span class="skill-name">JavaScript</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level multi" style="width: 60%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University & Live Stats Project</div>
-            </div>
-            <!-- Shell Scripting -->
-            <div class="skill">
-                <span class="skill-name">Shell Scripting</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level multi" style="width: 70%;"></div>
-                </div>
-                <div class="skill-details">Developed during Live Stats Project</div>
-            </div>
-            <!-- Linux Environment -->
-            <div class="skill">
-                <span class="skill-name">Linux Environment</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level multi" style="width: 60%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University & Live Stats Project</div>
-            </div>
-        </div>
-
-        <!-- Data Analysis, Machine Learning & APIs -->
-        <div class="skill-category">
-            <h3>Data Analysis, Machine Learning & APIs</h3>
-            <!-- Pandas -->
-            <div class="skill">
-                <span class="skill-name">Pandas</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level multi" style="width: 85%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University & Airborne Systems</div>
-            </div>
-            <!-- NumPy -->
-            <div class="skill">
-                <span class="skill-name">NumPy</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level multi" style="width: 80%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University & Airborne Systems</div>
-            </div>
-            <!-- Matplotlib -->
-            <div class="skill">
-                <span class="skill-name">Matplotlib</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 80%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-            <!-- TensorFlow -->
-            <div class="skill">
-                <span class="skill-name">TensorFlow</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level live-stats" style="width: 60%;"></div>
-                </div>
-                <div class="skill-details">Developed during Live Stats Project</div>
-            </div>
-            <!-- PyTorch -->
-            <div class="skill">
-                <span class="skill-name">PyTorch</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level live-stats" style="width: 70%;"></div>
-                </div>
-                <div class="skill-details">Developed during Live Stats Project</div>
-            </div>
-            <!-- YOLO -->
-            <div class="skill">
-                <span class="skill-name">YOLO</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level live-stats" style="width: 75%;"></div>
-                </div>
-                <div class="skill-details">Developed during Live Stats Project</div>
-            </div>
-            <!-- OpenCV -->
-            <div class="skill">
-                <span class="skill-name">OpenCV</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level live-stats" style="width: 80%;"></div>
-                </div>
-                <div class="skill-details">Developed during Live Stats Project</div>
-            </div>
-            <!-- RoboFlow -->
-            <div class="skill">
-                <span class="skill-name">RoboFlow</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level live-stats" style="width: 65%;"></div>
-                </div>
-                <div class="skill-details">Developed during Live Stats Project</div>
-            </div>
-            <!-- SportsRadar API -->
-            <div class="skill">
-                <span class="skill-name">SportsRadar API</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level live-stats" style="width: 80%;"></div>
-                </div>
-                <div class="skill-details">Developed during Live Stats Project</div>
-            </div>
-            <!-- SolidWorks PDM API -->
-            <div class="skill">
-                <span class="skill-name">SolidWorks PDM API</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level airborne-systems" style="width: 75%;"></div>
-                </div>
-                <div class="skill-details">Developed at Airborne Systems</div>
-            </div>
-            <!-- OpenAI API -->
-            <div class="skill">
-                <span class="skill-name">OpenAI API</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 100%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-        </div>
-
-        <!-- Application Development/Programming Tools -->
-        <div class="skill-category">
-            <h3>Application Development/Programming Tools</h3>
-            <!-- Django -->
-            <div class="skill">
-                <span class="skill-name">Django</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level live-stats" style="width: 70%;"></div>
-                </div>
-                <div class="skill-details">Developed during Live Stats Project</div>
-            </div>
-            <!-- Heroku -->
-            <div class="skill">
-                <span class="skill-name">Heroku</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level live-stats" style="width: 65%;"></div>
-                </div>
-                <div class="skill-details">Developed during Live Stats Project</div>
-            </div>
-            <!-- AWS -->
-            <div class="skill">
-                <span class="skill-name">AWS</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 60%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-            <!-- PyQt5 -->
-            <div class="skill">
-                <span class="skill-name">PyQt5</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level multi" style="width: 80%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University & Airborne Systems</div>
-            </div>
-            <!-- Tesseract-OCR -->
-            <div class="skill">
-                <span class="skill-name">Tesseract-OCR</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level live-stats" style="width: 65%;"></div>
-                </div>
-                <div class="skill-details">Developed during Live Stats Project</div>
-            </div>
-            <!-- SSH -->
-            <div class="skill">
-                <span class="skill-name">SSH</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level live-stats" style="width: 100%;"></div>
-                </div>
-                <div class="skill-details">Developed during Live Stats Project</div>
-            </div>
-            <!-- Raspberry Pi -->
-            <div class="skill">
-                <span class="skill-name">Raspberry Pi</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level live-stats" style="width: 85%;"></div>
-                </div>
-                <div class="skill-details">Developed during Live Stats Project</div>
-            </div>
-            <!-- Twilio -->
-            <div class="skill">
-                <span class="skill-name">Twilio</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 80%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-            <!-- React Native -->
-            <div class="skill">
-                <span class="skill-name">React Native</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 50%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-            <!-- ffmpeg -->
-            <div class="skill">
-                <span class="skill-name">ffmpeg</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level multi" style="width: 80%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University & Airborne Systems</div>
-            </div>
-            <!-- OpenCV -->
-            <div class="skill">
-                <span class="skill-name">OpenCV</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level multi" style="width: 80%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University & Airborne Systems</div>
-            </div>
-            <!-- Firebase -->
-            <div class="skill">
-                <span class="skill-name">Firebase</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 100%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-        </div>
-
-        <!-- DevOps & Agile -->
-        <div class="skill-category">
-            <h3>DevOps & Agile</h3>
-            <!-- GitHub -->
-            <div class="skill">
-                <span class="skill-name">GitHub</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 100%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-            <!-- GitHub Actions -->
-            <div class="skill">
-                <span class="skill-name">GitHub Actions</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 100%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-            <!-- Git -->
-            <div class="skill">
-                <span class="skill-name">Git</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level airborne-systems" style="width: 100%;"></div>
-                </div>
-                <div class="skill-details">Developed at Airborne Systems</div>
-            </div>
-            <!-- Git Hooks -->
-            <div class="skill">
-                <span class="skill-name">Git Hooks (Update & Post-Receive)</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level airborne-systems" style="width: 80%;"></div>
-                </div>
-                <div class="skill-details">Developed at Airborne Systems</div>
-            </div>
-            <!-- SCRUM -->
-            <div class="skill">
-                <span class="skill-name">SCRUM</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level wayne-state" style="width: 80%;"></div>
-                </div>
-                <div class="skill-details">Developed at Wayne State University</div>
-            </div>
-            <!-- Waterfall -->
-            <div class="skill">
-                <span class="skill-name">Waterfall</span>
-                <div class="skill-bar" onclick="toggleSkillDetails(event)">
-                    <div class="skill-level airborne-systems" style="width: 70%;"></div>
-                </div>
-                <div class="skill-details">Developed at Airborne Systems</div>
-            </div>
-        </div>
+    <div id="skills-cloud-container">
+        <div id="skills-instructions">🖱️ Drag to rotate • Scroll to zoom</div>
+        <div id="skills-cloud"></div>
     </div>
+    
+    <script>
+        // Skills data extracted from the original skills page
+        const skillsData = [
+            // Programming Languages
+            { name: 'C', proficiency: 80, category: 'wayne-state' },
+            { name: 'C++', proficiency: 95, category: 'wayne-state' },
+            { name: 'Java', proficiency: 65, category: 'wayne-state' },
+            { name: 'Python', proficiency: 95, category: 'multi' },
+            { name: 'SQL', proficiency: 40, category: 'wayne-state' },
+            { name: 'Visual Basic', proficiency: 40, category: 'airborne-systems' },
+            { name: 'C#', proficiency: 60, category: 'airborne-systems' },
+            { name: 'HTML', proficiency: 80, category: 'multi' },
+            { name: 'CSS', proficiency: 85, category: 'multi' },
+            { name: 'JavaScript', proficiency: 60, category: 'multi' },
+            { name: 'Shell Scripting', proficiency: 70, category: 'multi' },
+            { name: 'Linux', proficiency: 60, category: 'multi' },
+            
+            // Data Analysis, ML & APIs
+            { name: 'Pandas', proficiency: 85, category: 'multi' },
+            { name: 'NumPy', proficiency: 80, category: 'multi' },
+            { name: 'Matplotlib', proficiency: 80, category: 'wayne-state' },
+            { name: 'TensorFlow', proficiency: 60, category: 'live-stats' },
+            { name: 'PyTorch', proficiency: 70, category: 'live-stats' },
+            { name: 'YOLO', proficiency: 75, category: 'live-stats' },
+            { name: 'OpenCV', proficiency: 80, category: 'live-stats' },
+            { name: 'RoboFlow', proficiency: 65, category: 'live-stats' },
+            { name: 'SportsRadar API', proficiency: 80, category: 'live-stats' },
+            { name: 'SolidWorks PDM', proficiency: 75, category: 'airborne-systems' },
+            { name: 'OpenAI API', proficiency: 100, category: 'wayne-state' },
+            
+            // Application Development
+            { name: 'Django', proficiency: 70, category: 'live-stats' },
+            { name: 'Heroku', proficiency: 65, category: 'live-stats' },
+            { name: 'AWS', proficiency: 60, category: 'wayne-state' },
+            { name: 'PyQt5', proficiency: 80, category: 'multi' },
+            { name: 'Tesseract-OCR', proficiency: 65, category: 'live-stats' },
+            { name: 'SSH', proficiency: 100, category: 'live-stats' },
+            { name: 'Raspberry Pi', proficiency: 85, category: 'live-stats' },
+            { name: 'Twilio', proficiency: 80, category: 'wayne-state' },
+            { name: 'React Native', proficiency: 50, category: 'wayne-state' },
+            { name: 'ffmpeg', proficiency: 80, category: 'multi' },
+            { name: 'Firebase', proficiency: 100, category: 'wayne-state' },
+            
+            // DevOps & Agile
+            { name: 'GitHub', proficiency: 100, category: 'wayne-state' },
+            { name: 'GitHub Actions', proficiency: 100, category: 'wayne-state' },
+            { name: 'Git', proficiency: 100, category: 'airborne-systems' },
+            { name: 'Git Hooks', proficiency: 80, category: 'airborne-systems' },
+            { name: 'SCRUM', proficiency: 80, category: 'wayne-state' },
+            { name: 'Waterfall', proficiency: 70, category: 'airborne-systems' }
+        ];
+
+        // Category colors (matching original design)
+        const categoryColors = {
+            'wayne-state': '#4CAF50',      // Green
+            'live-stats': '#2196F3',       // Blue
+            'airborne-systems': '#9E9E9E', // Gray
+            'multi': '#f44336'             // Red
+        };
+
+        // 3D Word Cloud implementation
+        class WordCloud3D {
+            constructor(container, skills) {
+                this.container = container;
+                this.skills = skills;
+                this.words = [];
+                this.angleX = 0;
+                this.angleY = 0;
+                this.targetAngleX = 0;
+                this.targetAngleY = 0;
+                this.isDragging = false;
+                this.lastMouseX = 0;
+                this.lastMouseY = 0;
+                this.radius = 250;
+                this.scale = 1;
+                
+                this.init();
+                this.bindEvents();
+                this.animate();
+            }
+            
+            init() {
+                // Create word elements and position them in 3D space
+                this.skills.forEach((skill, index) => {
+                    const word = document.createElement('div');
+                    word.className = 'skill-word';
+                    word.textContent = skill.name;
+                    
+                    // Calculate size based on proficiency (40-100% maps to 16-48px)
+                    const minSize = 16;
+                    const maxSize = 48;
+                    const size = minSize + (skill.proficiency / 100) * (maxSize - minSize);
+                    word.style.fontSize = size + 'px';
+                    word.style.color = categoryColors[skill.category];
+                    
+                    // Position in sphere using Fibonacci sphere algorithm
+                    const phi = Math.acos(-1 + (2 * index) / this.skills.length);
+                    const theta = Math.sqrt(this.skills.length * Math.PI) * phi;
+                    
+                    word.phi = phi;
+                    word.theta = theta;
+                    word.skill = skill;
+                    
+                    this.container.appendChild(word);
+                    this.words.push(word);
+                });
+            }
+            
+            updatePositions() {
+                const centerX = this.container.offsetWidth / 2;
+                const centerY = this.container.offsetHeight / 2;
+                
+                this.words.forEach(word => {
+                    // Calculate 3D position
+                    const x = this.radius * Math.cos(word.theta + this.angleY) * Math.sin(word.phi + this.angleX);
+                    const y = this.radius * Math.sin(word.theta + this.angleY) * Math.sin(word.phi + this.angleX);
+                    const z = this.radius * Math.cos(word.phi + this.angleX);
+                    
+                    // Calculate scale and opacity based on z-position
+                    const perspective = 500;
+                    const scale = perspective / (perspective - z) * this.scale;
+                    const opacity = (z + this.radius) / (2 * this.radius);
+                    
+                    // Apply transform
+                    word.style.transform = `translate(-50%, -50%) translate3d(${x}px, ${y}px, ${z}px) scale(${scale})`;
+                    word.style.opacity = Math.max(0.3, opacity);
+                    word.style.zIndex = Math.floor(z + this.radius);
+                });
+            }
+            
+            bindEvents() {
+                // Mouse events
+                this.container.addEventListener('mousedown', (e) => {
+                    this.isDragging = true;
+                    this.lastMouseX = e.clientX;
+                    this.lastMouseY = e.clientY;
+                    e.preventDefault();
+                });
+                
+                document.addEventListener('mousemove', (e) => {
+                    if (this.isDragging) {
+                        const deltaX = e.clientX - this.lastMouseX;
+                        const deltaY = e.clientY - this.lastMouseY;
+                        
+                        this.targetAngleY += deltaX * 0.01;
+                        this.targetAngleX += deltaY * 0.01;
+                        
+                        this.lastMouseX = e.clientX;
+                        this.lastMouseY = e.clientY;
+                    }
+                });
+                
+                document.addEventListener('mouseup', () => {
+                    this.isDragging = false;
+                });
+                
+                // Touch events
+                this.container.addEventListener('touchstart', (e) => {
+                    if (e.touches.length === 1) {
+                        this.isDragging = true;
+                        this.lastMouseX = e.touches[0].clientX;
+                        this.lastMouseY = e.touches[0].clientY;
+                        e.preventDefault();
+                    }
+                });
+                
+                this.container.addEventListener('touchmove', (e) => {
+                    if (this.isDragging && e.touches.length === 1) {
+                        const deltaX = e.touches[0].clientX - this.lastMouseX;
+                        const deltaY = e.touches[0].clientY - this.lastMouseY;
+                        
+                        this.targetAngleY += deltaX * 0.01;
+                        this.targetAngleX += deltaY * 0.01;
+                        
+                        this.lastMouseX = e.touches[0].clientX;
+                        this.lastMouseY = e.touches[0].clientY;
+                        e.preventDefault();
+                    }
+                });
+                
+                this.container.addEventListener('touchend', () => {
+                    this.isDragging = false;
+                });
+                
+                // Wheel event for zoom
+                this.container.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    const delta = e.deltaY * 0.001;
+                    this.scale = Math.max(0.5, Math.min(2, this.scale - delta));
+                });
+                
+                // Window resize
+                window.addEventListener('resize', () => {
+                    this.updatePositions();
+                });
+            }
+            
+            animate() {
+                // Smooth rotation
+                this.angleY += (this.targetAngleY - this.angleY) * 0.1;
+                this.angleX += (this.targetAngleX - this.angleX) * 0.1;
+                
+                // Auto-rotate slowly when not dragging
+                if (!this.isDragging) {
+                    this.targetAngleY += 0.002;
+                }
+                
+                this.updatePositions();
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // Initialize when page loads
+        window.addEventListener('load', () => {
+            const container = document.getElementById('skills-cloud');
+            new WordCloud3D(container, skillsData);
+        });
+    </script>
     <footer>
         <p>Connect with me on LinkedIn: 
             <a href="https://www.linkedin.com/in/jordangrewe" target="_blank" rel="noopener noreferrer">Jordan Grewe</a>
