@@ -757,9 +757,9 @@ details[open] summary:after {
     margin-top: 15px;
 }
 
-.action-btn {
-    font-size: 0.88rem !important;
-    padding: 10px 14px !important;
+.quick-actions .btn.action-btn {
+    font-size: 0.88rem;
+    padding: 10px 14px;
 }
 
 .action-feedback {

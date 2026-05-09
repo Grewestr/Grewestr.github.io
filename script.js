@@ -4,6 +4,7 @@ const statuses = [
     'Running rapid experiment-to-deployment cycles',
     'Optimizing models and production workflows'
 ];
+const STATUS_ROTATION_INTERVAL_MS = 3200;
 
 const recommendations = {
     'autonomous-systems': {
@@ -49,7 +50,7 @@ const updateStatus = () => {
 };
 
 const updateRecommendation = () => {
-    if (!selectElement) {
+    if (!selectElement || !recommendationTitle || !recommendationSummary || !recommendationLink) {
         return;
     }
 
@@ -116,7 +117,7 @@ const animateMetrics = () => {
 updateStatus();
 updateRecommendation();
 animateMetrics();
-setInterval(updateStatus, 3200);
+setInterval(updateStatus, STATUS_ROTATION_INTERVAL_MS);
 
 if (selectElement) {
     selectElement.addEventListener('change', updateRecommendation);
