@@ -71,7 +71,11 @@ const handleAction = (action) => {
     }
 
     if (action === 'github') {
-        window.open('https://github.com/Grewestr', '_blank', 'noopener,noreferrer');
+        const githubLink = document.createElement('a');
+        githubLink.href = 'https://github.com/Grewestr';
+        githubLink.target = '_blank';
+        githubLink.rel = 'noopener noreferrer';
+        githubLink.click();
         feedbackElement.textContent = 'Opened GitHub profile in a new tab.';
         return;
     }
@@ -87,7 +91,8 @@ const handleAction = (action) => {
 
     if (action === 'copy-email') {
         const mailLink = document.getElementById('contact-email');
-        const email = mailLink ? mailLink.getAttribute('href').replace(/^mailto:/, '') : '';
+        const emailHref = mailLink ? mailLink.getAttribute('href') : '';
+        const email = emailHref && emailHref.startsWith('mailto:') ? emailHref.slice(7) : '';
 
         if (!email) {
             feedbackElement.textContent = 'Email is unavailable right now.';
@@ -108,6 +113,12 @@ const animateMetrics = () => {
     metricValues.forEach((metric) => {
         const target = Number(metric.dataset.target || 0);
         let current = 0;
+
+        if (target <= METRIC_ANIMATION_STEPS) {
+            metric.textContent = String(target);
+            return;
+        }
+
         const step = Math.max(1, Math.ceil(target / METRIC_ANIMATION_STEPS));
 
         const increment = () => {
