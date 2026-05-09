@@ -139,7 +139,7 @@ const animateMetrics = () => {
             }
         };
 
-        increment();
+        requestAnimationFrame(increment);
     });
 };
 
