@@ -70,7 +70,7 @@ const handleAction = (action) => {
     }
 
     if (action === 'github') {
-        window.open('https://github.com/Grewestr', '_blank', 'noopener noreferrer');
+        window.open('https://github.com/Grewestr', '_blank', 'noopener,noreferrer');
         feedbackElement.textContent = 'Opened GitHub profile in a new tab.';
         return;
     }
