@@ -720,3 +720,108 @@ details[open] summary:after {
         border-bottom: 1px solid #e0e0e0;
     }
 }
+
+#agentic-lab {
+    background: linear-gradient(145deg, #ffffff 0%, #f5f7ff 100%);
+}
+
+.agentic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.agentic-card {
+    border: 1px solid #e4e8f5;
+    border-radius: 16px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(70, 85, 130, 0.1);
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+
+.quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.action-btn {
+    font-size: 0.88rem !important;
+    padding: 10px 14px !important;
+}
+
+.action-feedback {
+    min-height: 24px;
+    margin-top: 12px;
+    color: #4a5568;
+    font-size: 0.95rem;
+}
+
+.recommender-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.recommendation-card {
+    margin-top: 14px;
+    border-radius: 12px;
+    background: #f7f9ff;
+    border: 1px solid #dce3ff;
+    padding: 16px;
+}
+
+.recommendation-card h4 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.metric-row {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.metric-card {
+    background: #1f2937;
+    color: #fff;
+    padding: 16px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.metric-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #93c5fd;
+}
+
+.metric-label {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+    .agentic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-row {
+        grid-template-columns: 1fr;
+    }
+}
