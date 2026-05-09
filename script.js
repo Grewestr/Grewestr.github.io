@@ -6,6 +6,7 @@ const statuses = [
 ];
 const STATUS_ROTATION_INTERVAL_MS = 3200;
 const METRIC_ANIMATION_STEPS = 30;
+const METRIC_ANIMATION_DURATION_MS = 900;
 
 const recommendations = {
     'autonomous-systems': {
@@ -71,12 +72,12 @@ const handleAction = (action) => {
     }
 
     if (action === 'github') {
-        const githubLink = document.createElement('a');
-        githubLink.href = 'https://github.com/Grewestr';
-        githubLink.target = '_blank';
-        githubLink.rel = 'noopener noreferrer';
-        githubLink.click();
-        feedbackElement.textContent = 'Opened GitHub profile in a new tab.';
+        const openedWindow = window.open('https://github.com/Grewestr', '_blank', 'noopener,noreferrer');
+        if (openedWindow) {
+            feedbackElement.textContent = 'Opened GitHub profile in a new tab.';
+        } else {
+            feedbackElement.textContent = 'Popup blocked. Please open https://github.com/Grewestr manually.';
+        }
         return;
     }
 
@@ -99,6 +100,11 @@ const handleAction = (action) => {
             return;
         }
 
+        if (!navigator.clipboard || typeof navigator.clipboard.writeText !== 'function') {
+            feedbackElement.textContent = `Clipboard is unavailable. Email: ${email}`;
+            return;
+        }
+
         navigator.clipboard.writeText(email)
             .then(() => {
                 feedbackElement.textContent = 'Email copied to clipboard.';
@@ -112,20 +118,22 @@ const handleAction = (action) => {
 const animateMetrics = () => {
     metricValues.forEach((metric) => {
         const target = Number(metric.dataset.target || 0);
-        let current = 0;
 
         if (target <= METRIC_ANIMATION_STEPS) {
             metric.textContent = String(target);
             return;
         }
 
-        const step = Math.max(1, Math.ceil(target / METRIC_ANIMATION_STEPS));
+        const startTime = performance.now();
 
-        const increment = () => {
-            current = Math.min(target, current + step);
-            metric.textContent = String(current);
-            if (current < target) {
+        const increment = (timestamp) => {
+            const progress = Math.min((timestamp - startTime) / METRIC_ANIMATION_DURATION_MS, 1);
+            const value = Math.floor(target * progress);
+            metric.textContent = String(value);
+            if (progress < 1) {
                 requestAnimationFrame(increment);
+            } else {
+                metric.textContent = String(target);
             }
         };
 
