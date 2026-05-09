@@ -805,8 +805,9 @@ details[open] summary:after {
     box-shadow: 0 8px 32px rgba(70, 85, 130, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-.agentic-card:hover {
-    transform: translateY(-5px) !important;
+.agentic-card:hover,
+.agentic-card.is-visible:hover {
+    transform: translateY(-5px);
     box-shadow: 0 20px 50px rgba(70, 85, 130, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.9);
     border-color: rgba(102, 126, 234, 0.4);
 }
@@ -876,8 +877,9 @@ details[open] summary:after {
     box-shadow: 0 0 28px rgba(102, 126, 234, 0.18), 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 
-.metric-card:hover {
-    transform: translateY(-5px) !important;
+.metric-card:hover,
+.metric-card.is-visible:hover {
+    transform: translateY(-5px);
     box-shadow: 0 0 44px rgba(102, 126, 234, 0.32), 0 12px 32px rgba(0, 0, 0, 0.3);
     border-color: rgba(102, 126, 234, 0.45);
 }
@@ -990,8 +992,9 @@ details[open] summary:after {
     box-shadow: 0 8px 24px rgba(30, 41, 59, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-.impact-item:hover {
-    transform: translateY(-6px) !important;
+.impact-item:hover,
+.impact-item.is-visible:hover {
+    transform: translateY(-6px);
     box-shadow: 0 20px 48px rgba(79, 70, 229, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.9);
     border-color: rgba(102, 126, 234, 0.45);
 }
@@ -1021,8 +1024,9 @@ details[open] summary:after {
     padding: 22px;
 }
 
-.summary-card:hover {
-    transform: translateY(-4px) !important;
+.summary-card:hover,
+.summary-card.is-visible:hover {
+    transform: translateY(-4px);
     box-shadow: 0 16px 40px rgba(79, 70, 229, 0.12);
     border-color: rgba(102, 126, 234, 0.35);
 }
