@@ -39,6 +39,8 @@ const recommendationSummary = document.getElementById('recommendation-summary');
 const recommendationLink = document.getElementById('recommendation-link');
 const metricValues = document.querySelectorAll('.metric-value');
 const actionButtons = document.querySelectorAll('.action-btn');
+const metricRow = document.querySelector('.metric-row');
+const revealElements = document.querySelectorAll('.impact-item, .summary-card, .agentic-card, .metric-card');
 
 let statusIndex = 0;
 
@@ -141,9 +143,52 @@ const animateMetrics = () => {
     });
 };
 
+const initRevealAnimations = () => {
+    if (!('IntersectionObserver' in window)) {
+        revealElements.forEach((element) => element.classList.add('is-visible'));
+        return;
+    }
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    revealElements.forEach((element) => {
+        revealObserver.observe(element);
+    });
+};
+
+const initMetricAnimation = () => {
+    if (!metricRow) {
+        return;
+    }
+
+    if (!('IntersectionObserver' in window)) {
+        animateMetrics();
+        return;
+    }
+
+    const metricObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                animateMetrics();
+                metricObserver.disconnect();
+            }
+        });
+    }, { threshold: 0.3 });
+
+    metricObserver.observe(metricRow);
+};
+
 updateStatus();
 updateRecommendation();
-animateMetrics();
+initRevealAnimations();
+initMetricAnimation();
 setInterval(updateStatus, STATUS_ROTATION_INTERVAL_MS);
 
 if (selectElement) {
