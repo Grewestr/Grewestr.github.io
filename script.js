@@ -70,7 +70,7 @@ const handleAction = (action) => {
     }
 
     if (action === 'github') {
-        window.open('https://github.com/Grewestr', '_blank', 'noopener,noreferrer');
+        window.open('https://github.com/Grewestr', '_blank', 'noopener noreferrer');
         feedbackElement.textContent = 'Opened GitHub profile in a new tab.';
         return;
     }
@@ -85,7 +85,14 @@ const handleAction = (action) => {
     }
 
     if (action === 'copy-email') {
-        const email = 'jgrewe3@gatech.edu';
+        const mailLink = document.querySelector('footer a[href^="mailto:"]');
+        const email = mailLink ? mailLink.getAttribute('href').replace(/^mailto:/, '') : '';
+
+        if (!email) {
+            feedbackElement.textContent = 'Email is unavailable right now.';
+            return;
+        }
+
         navigator.clipboard.writeText(email)
             .then(() => {
                 feedbackElement.textContent = 'Email copied to clipboard.';
