@@ -5,6 +5,7 @@ const statuses = [
     'Optimizing models and production workflows'
 ];
 const STATUS_ROTATION_INTERVAL_MS = 3200;
+const METRIC_ANIMATION_STEPS = 30;
 
 const recommendations = {
     'autonomous-systems': {
@@ -85,7 +86,7 @@ const handleAction = (action) => {
     }
 
     if (action === 'copy-email') {
-        const mailLink = document.querySelector('footer a[href^="mailto:"]');
+        const mailLink = document.getElementById('contact-email');
         const email = mailLink ? mailLink.getAttribute('href').replace(/^mailto:/, '') : '';
 
         if (!email) {
@@ -107,7 +108,7 @@ const animateMetrics = () => {
     metricValues.forEach((metric) => {
         const target = Number(metric.dataset.target || 0);
         let current = 0;
-        const step = Math.max(1, Math.ceil(target / 30));
+        const step = Math.max(1, Math.ceil(target / METRIC_ANIMATION_STEPS));
 
         const increment = () => {
             current = Math.min(target, current + step);
